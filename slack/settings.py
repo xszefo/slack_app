@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'fqv8hph#!h6r(+(jd!0m4o+ewsaninl7*q^p!@f_xbx(=_8prg'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['178.216.201.176']
 
 
 # Application definition
@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'events'
 ]
 
 MIDDLEWARE = [
@@ -118,3 +120,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# CONSTATNTS
+CONST = {
+        'SLACK_VERIFICATION_TOKEN': os.getenv('SLACK_VERIFICATION_TOKEN'),
+        'SLACK_BOT_USER_TOKEN': os.getenv('SLACK_BOT_USER_TOKEN'),
+        }
