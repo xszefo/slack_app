@@ -19,5 +19,5 @@ from events.views import Events                                    #
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^events/', Events.as_view()),
+    url(r'^events/$', Events.as_view()),
 ]
